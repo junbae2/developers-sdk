@@ -48,6 +48,7 @@ internal class ApiClientRequestFeature(val config: Config) {
                     context.url.encodedPath,
                     timestamp.toLong(),
                     nonce,
+                    context.url.parameters.build().toMap(),
                     bodyAsMap(context)
                 )
                 context.headers.append(SERVICE_API_KEY_HEADER, serviceApiKey)
