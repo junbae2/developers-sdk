@@ -229,7 +229,7 @@ enum class OrderBy {
     fun toParameter(): String = this.name.toLowerCase()
 }
 
-enum class RequestType {
-    REDIRECT_URI, AOA;
-    fun toParameter(): String = this.name.toLowerCase()
+enum class RequestType(private val type: String) {
+    REDIRECT_URI("redirectUri"), AOA("aoa");
+    fun toParameter(): String = this.type
 }
